@@ -4,7 +4,6 @@ package br.com.americas.atividade;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
 public class Mensagem {
     LocalDateTime timeStamp;
     String nomeUser;
