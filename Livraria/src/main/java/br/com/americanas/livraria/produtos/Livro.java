@@ -1,13 +1,13 @@
 package br.com.americanas.livraria.produtos;
 
-public class Livros  extends Produto{
+public class Livro extends Produto{
         int objtype = 1;
         String genero;
         String escritor;
         String editora;
 
-        public Livros(int id,String nome, Double preco,String genero,String escritor,String editora) {
-                super(id,nome, preco);
+        public Livro(int id, String nome, Double preco, int quantidade, String genero, String escritor, String editora) {
+                super(id,nome, preco, quantidade);
                 this.genero = genero;
                 this.escritor = escritor;
                 this.editora = editora;
@@ -43,14 +43,14 @@ public class Livros  extends Produto{
 
         @Override
         public String toString() {
-                return "Livros{" +
-                        "objtype='" + objtype + '\'' +
-                        ", genero='" + genero + '\'' +
-                        ", escritor='" + escritor + '\'' +
-                        ", editora='" + editora + '\'' +
-                        ", id=" + id +
-                        ", nome='" + nome + '\'' +
-                        ", preco=" + preco +
-                        '}';
+                return "Livros :" +
+                        "| id=" + id +
+                        "| nome='" + nome + '\'' +
+                        "| Genero='" + genero + '\'' +
+                        "| Escritor='" + escritor + '\'' +
+                        "| Editora='" + editora + '\'' +
+                        "| Preco=" + preco +
+                        "| Quantidade=" + quantidade +
+                        '|';
         }
 }

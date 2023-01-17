@@ -35,7 +35,7 @@ public class Main {
     static ArrayList<Produto> bancoDeDados = new ArrayList<>();
 
     public static void main(String[] args){
-        Livros a = new Livros(contador,"Teste", 12.0,"Teste genero","Teste escritor","Teste editora");
+        Livro a = new Livro(contador,"Teste", 12.0,1,"Teste genero","Teste escritor","Teste editora");
         contador=contador+1;
         bancoDeDados.add(a);
         telaIncial();
@@ -56,7 +56,7 @@ public class Main {
         System.out.println("======================================================");
         System.out.println("========== Sistema de caixa ==========================");
         System.out.println("======================================================");
-        System.out.println("========== Valor do caixa: "+cx.balancoDinheiro());
+        System.out.println("========== Valor do caixa: "+ cx.balancoDinheiro());
         System.out.println("======================================================");
         System.out.println("=== Cadastrar produtos = 1 ===========================");
         System.out.println("=== Remover produtos   = 2 ===========================");
@@ -104,11 +104,33 @@ public class Main {
             Produto rmv = null;
             for (Produto a: bancoDeDados) {
                 if(a.getId()==id){
-                    cx.addDinheiro(a.getPreco());
-                    rmv=a;
+                    if(a.getQuantidade()>0){
+                        rmv=a;
+                    }
                 }
             }
-            bancoDeDados.remove(rmv);
+            if(rmv!=null){
+                cx.addDinheiro(rmv.getPreco());
+                int novaQuanti = rmv.getQuantidade()-1;
+                bancoDeDados.get(bancoDeDados.indexOf(rmv)).setQuantidade(novaQuanti);
+                System.out.println("======================================================");
+                System.out.println("==== Deseja continuar comprando ? sim = 0 = não = 1 ==");
+                System.out.println("======================================================");
+                int opc=scanner.nextInt();
+                scanner.nextLine();
+                switch (opc){
+                    case 0: venderProd();
+                        break;
+                    case 1: telaMenu();
+                        break;
+                    default: telaMenu();
+                }
+            }else{
+                System.out.println("======================================================");
+                System.out.println("========= Produto sem estoque ou não existente =======");
+                System.out.println("======================================================");
+            }
+
         }else {
             System.out.println("======================================================");
             System.out.println("==== Não encontramos oque voce pediu =================");
@@ -259,28 +281,39 @@ public class Main {
             op=0;
         }
         System.out.println("======================================================");
+        System.out.println("=====  Quantidade de items ===========================");
+        System.out.println("=====  Atual: "+bancoDeDados.get(index).getQuantidade());
+        System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
+        op = scanner.nextInt();
+        scanner.nextLine();
+        if(op==1){
+            int quantidade = scanner.nextInt();
+            bancoDeDados.get(index).setQuantidade(quantidade);
+            op=0;
+        }
+        System.out.println("======================================================");
         System.out.println("=====  Musicos =======================================");
         String musicos;
-        System.out.println("=====  Atual: "+((AlbunsDeMusica) bancoDeDados.get(index)).getMusicosBanda());
+        System.out.println("=====  Atual: "+((AlbunDeMusica) bancoDeDados.get(index)).getMusicosBanda());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             musicos = scanner.nextLine();
-            ((AlbunsDeMusica) bancoDeDados.get(index)).setMusicosBanda(musicos);
+            ((AlbunDeMusica) bancoDeDados.get(index)).setMusicosBanda(musicos);
             op=0;
         }
         System.out.println("======================================================");
         System.out.println("=====  Generos =======================================");
         String generos;
 
-        System.out.println("=====  Atual: "+((AlbunsDeMusica) bancoDeDados.get(index)).getGeneros());
+        System.out.println("=====  Atual: "+((AlbunDeMusica) bancoDeDados.get(index)).getGeneros());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             generos = scanner.nextLine();
-            ((AlbunsDeMusica) bancoDeDados.get(index)).setGeneros(generos);
+            ((AlbunDeMusica) bancoDeDados.get(index)).setGeneros(generos);
             op=0;
         }
 
@@ -288,13 +321,13 @@ public class Main {
         System.out.println("=====  Selos =========================================");
         String selos;
 
-        System.out.println("=====  Atual: "+((AlbunsDeMusica) bancoDeDados.get(index)).getSelos());
+        System.out.println("=====  Atual: "+((AlbunDeMusica) bancoDeDados.get(index)).getSelos());
         System.out.println("=====  Alterar = 1 = | = Manter = 2 ==================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             selos = scanner.nextLine();
-            ((AlbunsDeMusica) bancoDeDados.get(index)).setSelos(selos);
+            ((AlbunDeMusica) bancoDeDados.get(index)).setSelos(selos);
             op=0;
         }
         listarAlbun();
@@ -330,14 +363,25 @@ public class Main {
             op=0;
         }
         System.out.println("======================================================");
+        System.out.println("=====  Quantidade de items ===========================");
+        System.out.println("=====  Atual: "+bancoDeDados.get(index).getQuantidade());
+        System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
+        op = scanner.nextInt();
+        scanner.nextLine();
+        if(op==1){
+            int quantidade = scanner.nextInt();
+            bancoDeDados.get(index).setQuantidade(quantidade);
+            op=0;
+        }
+        System.out.println("======================================================");
         System.out.println("=====  Tipo do Brinquedo =============================");
-        System.out.println("=====  Atual: "+ ((Brinquedos) bancoDeDados.get(index)).getTipo());
+        System.out.println("=====  Atual: "+ ((Brinquedo) bancoDeDados.get(index)).getTipo());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             tipo = scanner.nextLine();
-            ((Brinquedos) bancoDeDados.get(index)).setTipo(tipo);
+            ((Brinquedo) bancoDeDados.get(index)).setTipo(tipo);
             op=0;
         }
         listarBrinq();
@@ -376,27 +420,38 @@ public class Main {
             op=0;
         }
         System.out.println("======================================================");
+        System.out.println("=====  Quantidade de items ===========================");
+        System.out.println("=====  Atual: "+bancoDeDados.get(index).getQuantidade());
+        System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
+        op = scanner.nextInt();
+        scanner.nextLine();
+        if(op==1){
+            int quantidade = scanner.nextInt();
+            bancoDeDados.get(index).setQuantidade(quantidade);
+            op=0;
+        }
+        System.out.println("======================================================");
         System.out.println("=====  Estudio do filme ==============================");
 
-        System.out.println("=====  Atual: "+ ((Filmes) bancoDeDados.get(index)).getEstudio());
+        System.out.println("=====  Atual: "+ ((Filme) bancoDeDados.get(index)).getEstudio());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             estudio = scanner.nextLine();
-            ((Filmes) bancoDeDados.get(index)).setEstudio(estudio);
+            ((Filme) bancoDeDados.get(index)).setEstudio(estudio);
             op=0;
         }
         System.out.println("======================================================");
         System.out.println("=====  Diretores do filme ============================");
 
-        System.out.println("=====  Atual: "+ ((Filmes) bancoDeDados.get(index)).getDiretores());
+        System.out.println("=====  Atual: "+ ((Filme) bancoDeDados.get(index)).getDiretores());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             diretores = scanner.nextLine();
-            ((Filmes) bancoDeDados.get(index)).setDiretores(diretores);
+            ((Filme) bancoDeDados.get(index)).setDiretores(diretores);
             op=0;
         }
 
@@ -404,26 +459,26 @@ public class Main {
         System.out.println("=====  Generos do filme ==============================");
 
 
-        System.out.println("=====  Atual: "+ ((Filmes) bancoDeDados.get(index)).getGeneros());
+        System.out.println("=====  Atual: "+ ((Filme) bancoDeDados.get(index)).getGeneros());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             generos = scanner.nextLine();
-            ((Filmes) bancoDeDados.get(index)).setGeneros(generos);
+            ((Filme) bancoDeDados.get(index)).setGeneros(generos);
             op=0;
         }
 
         System.out.println("======================================================");
         System.out.println("=====  Produtores do filme ===========================");
 
-        System.out.println("=====  Atual: "+ ((Filmes) bancoDeDados.get(index)).getProdutores());
+        System.out.println("=====  Atual: "+ ((Filme) bancoDeDados.get(index)).getProdutores());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             produtores = scanner.nextLine();
-            ((Filmes) bancoDeDados.get(index)).setProdutores(produtores);
+            ((Filme) bancoDeDados.get(index)).setProdutores(produtores);
             op=0;
         }
         System.out.println("======================================================");
@@ -463,37 +518,48 @@ public class Main {
             op=0;
         }
         System.out.println("======================================================");
+        System.out.println("=====  Quantidade de items ===========================");
+        System.out.println("=====  Atual: "+bancoDeDados.get(index).getQuantidade());
+        System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
+        op = scanner.nextInt();
+        scanner.nextLine();
+        if(op==1){
+            int quantidade = scanner.nextInt();
+            bancoDeDados.get(index).setQuantidade(quantidade);
+            op=0;
+        }
+        System.out.println("======================================================");
         System.out.println("=====  Distribuidora do Jogo =========================");
-        System.out.println("=====  Atual: "+ ((Jogos) bancoDeDados.get(index)).getDistribuidora());
+        System.out.println("=====  Atual: "+ ((Jogo) bancoDeDados.get(index)).getDistribuidora());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             distribuidora = scanner.nextLine();
-            ((Jogos) bancoDeDados.get(index)).setDistribuidora(distribuidora);
+            ((Jogo) bancoDeDados.get(index)).setDistribuidora(distribuidora);
             op=0;
         }
 
         System.out.println("======================================================");
         System.out.println("=====  Generos do Jogo ===============================");
-        System.out.println("=====  Atual: "+ ((Jogos) bancoDeDados.get(index)).getGeneros());
+        System.out.println("=====  Atual: "+ ((Jogo) bancoDeDados.get(index)).getGeneros());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             generos = scanner.nextLine();
-            ((Jogos) bancoDeDados.get(index)).setGeneros(generos);
+            ((Jogo) bancoDeDados.get(index)).setGeneros(generos);
             op=0;
         }
         System.out.println("======================================================");
         System.out.println("=====  Estudio do Jogo ===============================");
-        System.out.println("=====  Atual: "+ ((Jogos) bancoDeDados.get(index)).getEstudio());
+        System.out.println("=====  Atual: "+ ((Jogo) bancoDeDados.get(index)).getEstudio());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             estudio = scanner.nextLine();
-            ((Jogos) bancoDeDados.get(index)).setEstudio(estudio);
+            ((Jogo) bancoDeDados.get(index)).setEstudio(estudio);
             op=0;
         }
         listarJogos();
@@ -531,36 +597,47 @@ public class Main {
             op=0;
         }
         System.out.println("======================================================");
+        System.out.println("=====  Quantidade de items ===========================");
+        System.out.println("=====  Atual: "+bancoDeDados.get(index).getQuantidade());
+        System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
+        op = scanner.nextInt();
+        scanner.nextLine();
+        if(op==1){
+            int quantidade = scanner.nextInt();
+            bancoDeDados.get(index).setQuantidade(quantidade);
+            op=0;
+        }
+        System.out.println("======================================================");
         System.out.println("=====  Genero do Livro ===============================");
-        System.out.println("=====  Atual: "+ ((Livros) bancoDeDados.get(index)).getGenero());
+        System.out.println("=====  Atual: "+ ((Livro) bancoDeDados.get(index)).getGenero());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             genero = scanner.nextLine();
-            ((Livros) bancoDeDados.get(index)).setGenero(genero);
+            ((Livro) bancoDeDados.get(index)).setGenero(genero);
             op=0;
         }
         System.out.println("=======================================================");
         System.out.println("=====  Escritor do Livro ==============================");
-        System.out.println("=====  Atual: "+ ((Livros) bancoDeDados.get(index)).getEscritor());
+        System.out.println("=====  Atual: "+ ((Livro) bancoDeDados.get(index)).getEscritor());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             escritor = scanner.nextLine();
-            ((Livros) bancoDeDados.get(index)).setEscritor(escritor);
+            ((Livro) bancoDeDados.get(index)).setEscritor(escritor);
             op=0;
         }
         System.out.println("======================================================");
         System.out.println("=====  Editora do Livro ==============================");
-        System.out.println("=====  Atual: "+ ((Livros) bancoDeDados.get(index)).getEditora());
+        System.out.println("=====  Atual: "+ ((Livro) bancoDeDados.get(index)).getEditora());
         System.out.println("=====  Alterar= 1 = | = Manter = 2 ===================");
         op = scanner.nextInt();
         scanner.nextLine();
         if(op==1){
             editora = scanner.nextLine();
-            ((Livros) bancoDeDados.get(index)).setEditora(editora);
+            ((Livro) bancoDeDados.get(index)).setEditora(editora);
             op=0;
         }
         listarLivros();
@@ -646,7 +723,11 @@ public class Main {
         System.out.println("=====  Preço do Albun de Musicas =====================");
         Double preco = scanner.nextDouble();
         System.out.println("======================================================");
-        Produto novoAlbunMusica= new AlbunsDeMusica(contador,nome,preco,musicos,generos,selos);
+        System.out.println("=====  Quantidade de items ===========================");
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("======================================================");
+        Produto novoAlbunMusica= new AlbunDeMusica(contador,nome,preco,quantidade,musicos,generos,selos);
         contador = contador+1;
         bancoDeDados.add(novoAlbunMusica);
         listarAlbun();
@@ -665,7 +746,11 @@ public class Main {
         System.out.println("=====  Preço do Brinquedo ============================");
         Double preco = scanner.nextDouble();
         System.out.println("======================================================");
-        Produto novoBrinquedo = new Brinquedos(contador,nome,preco,tipo);
+        System.out.println("=====  Quantidade de items ===========================");
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("======================================================");
+        Produto novoBrinquedo = new Brinquedo(contador,nome,preco,quantidade,tipo);
         contador = contador+1;
         bancoDeDados.add(novoBrinquedo);
         listarBrinq();
@@ -690,7 +775,11 @@ public class Main {
         System.out.println("=====  Preço do Jogo =================================");
         Double preco = scanner.nextDouble();
         System.out.println("======================================================");
-        Produto novoJogo = new Jogos(contador,nome,preco,distribuidora,generos,estudio);
+        System.out.println("=====  Quantidade de items ===========================");
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("======================================================");
+        Produto novoJogo = new Jogo(contador,nome,preco,quantidade,distribuidora,generos,estudio);
         contador=contador+1;
         bancoDeDados.add(novoJogo);
         listarJogos();
@@ -715,7 +804,11 @@ public class Main {
         System.out.println("=====  Preço do Livro ================================");
         Double preco = scanner.nextDouble();
         System.out.println("======================================================");
-        Produto novoLivro = new Livros(contador,nome,preco,genero,escritor,editora);
+        System.out.println("=====  Quantidade de items ===========================");
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("======================================================");
+        Produto novoLivro = new Livro(contador,nome,preco,quantidade,genero,escritor,editora);
         contador=contador+1;
         bancoDeDados.add(novoLivro);
         listarLivros();
@@ -743,7 +836,11 @@ public class Main {
         System.out.println("=====  Preço do filme ================================");
         Double preco = scanner.nextDouble();
         System.out.println("======================================================");
-        Produto novoFilme = new Filmes(contador,nome,preco,estudio,diretores,generos,produtores);
+        System.out.println("=====  Quantidade de items ===========================");
+        int quantidade = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("======================================================");
+        Produto novoFilme = new Filme(contador,nome,preco,quantidade,estudio,diretores,generos,produtores);
         contador=contador+1;
         bancoDeDados.add(novoFilme);
         listarFilmes();
@@ -765,13 +862,17 @@ public class Main {
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
+        System.out.println("======== Para cadastrar um novo Albun  = 3 ===========");
         System.out.println("======================================================");
         int opc = scanner.nextInt();
+        scanner.nextLine();
         scanner.nextLine();
         switch (opc){
             case 1: listProd();
                 break;
             case 2: telaMenu();
+                break;
+            case 3: cadastrarAlbun();
                 break;
             default:
                 telaMenu();
@@ -791,14 +892,18 @@ public class Main {
         }
         System.out.println("============================= Quantidade : "+cont);
         System.out.println("======================================================");
-        System.out.println("======== Para voltar ao menu anterior == 1 ===========");
-        System.out.println("======== Para voltar ao menu principal = 2 ===========");
+        System.out.println("======== Para voltar ao menu anterior    == 1 ========");
+        System.out.println("======== Para voltar ao menu principal    = 2 ========");
+        System.out.println("======== Para cadastrar um novo Brinquedo = 3 ========");
         System.out.println("======================================================");
         int opc = scanner.nextInt();
+        scanner.nextLine();
         switch (opc){
             case 1: listProd();
                 break;
             case 2: telaMenu();
+                break;
+            case 3: cadastrarBrinq();
                 break;
             default:
                 telaMenu();
@@ -820,12 +925,16 @@ public class Main {
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
+        System.out.println("======== Para cadastrar um novo Filme  = 3 ===========");
         System.out.println("======================================================");
         int opc = scanner.nextInt();
+        scanner.nextLine();
         switch (opc){
             case 1: listProd();
                 break;
             case 2: telaMenu();
+                break;
+            case 3: cadastrarFilmes();
                 break;
             default:
                 telaMenu();
@@ -847,12 +956,16 @@ public class Main {
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
+        System.out.println("======== Para cadastrar um novo Jogo   = 3 ===========");
         System.out.println("======================================================");
         int opc = scanner.nextInt();
+        scanner.nextLine();
         switch (opc){
             case 1: listProd();
                 break;
             case 2: telaMenu();
+                break;
+            case 3: cadastrarJogos();
                 break;
             default:
                 telaMenu();
@@ -874,13 +987,16 @@ public class Main {
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
+        System.out.println("======== Para cadastrar um novo livro  = 3 ===========");
         System.out.println("======================================================");
         int opc = scanner.nextInt();
+        scanner.nextLine();
         switch (opc){
             case 1: listProd();
                 break;
             case 2: telaMenu();
                 break;
+            case 3: cadastrarLivros();
             default:
                 telaMenu();
         }

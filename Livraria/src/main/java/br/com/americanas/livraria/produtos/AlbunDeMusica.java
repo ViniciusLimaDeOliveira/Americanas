@@ -1,19 +1,19 @@
 package br.com.americanas.livraria.produtos;
 
-public class AlbunsDeMusica  extends Produto{
+public class AlbunDeMusica extends Produto{
     int objtype = 5;
     String musicosBanda;
     String generos;
     String selos;
 
 
-    public AlbunsDeMusica(int id,String nome, Double preco) {
+    public AlbunDeMusica(int id, String nome, Double preco, int quantidade) {
 
-        super(id,nome, preco);
+        super(id,nome, preco, quantidade);
     }
 
-    public AlbunsDeMusica(int id,String nome, Double preco, String musicosBanda, String generos, String selos) {
-        super(id,nome, preco);
+    public AlbunDeMusica(int id, String nome, Double preco, int quantidade, String musicosBanda, String generos, String selos) {
+        super(id,nome, preco,quantidade);
         this.musicosBanda = musicosBanda;
         this.generos = generos;
         this.selos = selos;
@@ -49,14 +49,14 @@ public class AlbunsDeMusica  extends Produto{
 
     @Override
     public String toString() {
-        return "AlbunsDeMusica{" +
-                "objtype='" + objtype + '\'' +
-                ", musicosBanda='" + musicosBanda + '\'' +
-                ", generos='" + generos + '\'' +
-                ", selos='" + selos + '\'' +
-                ", id=" + id +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
-                '}';
+        return "Albun De Musica : " +
+                "| id=" + id +
+                "| Nome='" + nome + '\'' +
+                "| Musicos da banda='" + musicosBanda + '\'' +
+                "| Generos ='" + generos + '\'' +
+                "| Selos ='" + selos + '\'' +
+                "| Preco=" + preco +
+                "| Quantidade = " + quantidade +
+                '|';
     }
 }

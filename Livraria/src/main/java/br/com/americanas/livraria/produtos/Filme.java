@@ -1,25 +1,25 @@
 package br.com.americanas.livraria.produtos;
 
-public class Filmes  extends Produto {
+public class Filme extends Produto {
     int objtype = 3;
     String estudio;
     String diretores;
     String generos;
     String produtores;
 
-    public Filmes(int id,String nome, Double preco) {
-        super(id,nome, preco);
+    public Filme(int id, String nome, Double preco, int quantidade) {
+        super(id,nome, preco, quantidade);
     }
 
-    public Filmes(int id,String nome, Double preco, String estudio, String diretores, String generos, String produtores) {
-        super(id,nome, preco);
+    public Filme(int id, String nome, Double preco, int quantidade, String estudio, String diretores, String generos, String produtores) {
+        super(id,nome, preco,quantidade);
         this.estudio = estudio;
         this.diretores = diretores;
         this.generos = generos;
         this.produtores = produtores;
     }
 
-    public Filmes(int id) {
+    public Filme(int id) {
         super(id);
     }
 
@@ -61,15 +61,15 @@ public class Filmes  extends Produto {
 
     @Override
     public String toString() {
-        return "Filmes{" +
-                "objtype='" + objtype + '\'' +
-                ", estudio='" + estudio + '\'' +
-                ", diretores='" + diretores + '\'' +
-                ", generos='" + generos + '\'' +
-                ", produtores='" + produtores + '\'' +
-                ", id=" + id +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
-                '}';
+        return "Filmes :" +
+                "| id=" + id +
+                "| Nome='" + nome + '\'' +
+                "| Estudio='" + estudio + '\'' +
+                "| Diretores='" + diretores + '\'' +
+                "| Generos='" + generos + '\'' +
+                "| Produtores='" + produtores + '\'' +
+                "| Preco=" + preco +
+                "| Quantidade=" + quantidade +
+                '|';
     }
 }

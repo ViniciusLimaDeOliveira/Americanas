@@ -6,10 +6,14 @@ public abstract class Produto {
     int id;
     String nome;
     Double preco;
-    public Produto(int id,String nome, Double preco) {
+
+    int quantidade;
+
+    public Produto(int id,String nome, Double preco,int quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+        this.quantidade = quantidade;
     }
 
     public Produto(int id) {
@@ -40,4 +44,11 @@ public abstract class Produto {
         this.preco = preco;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
 }
