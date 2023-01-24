@@ -187,15 +187,18 @@ public class Main {
     }
 
     private static void listarAll() {
+        int total=0;
         System.out.println("======================================================");
         System.out.println("========= Todos os produtos  =========================");
         System.out.println("======================================================");
         for (Produto abm: bancoDeDados) {
             System.out.println("======================================================");
                 System.out.println(abm.toString());
+                total=total+abm.getQuantidade();
             System.out.println("======================================================");
         }
-        System.out.println("============================= Quantidade total : "+bancoDeDados.size());
+        System.out.println("============================= Produtos individuais : "+bancoDeDados.size());
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
@@ -849,6 +852,7 @@ public class Main {
 
     private static void listarAlbun() {
         int cont=0;
+        int total=0;
         System.out.println("======================================================");
         System.out.println("========= Albuns De Musica  ==========================");
         System.out.println("======================================================");
@@ -856,9 +860,11 @@ public class Main {
             if(abm.getObjtype()==5){
                 System.out.println(abm.toString());
                 cont=cont+1;
+                total= total + abm.getQuantidade();
             }
         }
-        System.out.println("============================= Quantidade : "+cont);
+        System.out.println("============================= Produtos individuais : "+cont);
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
@@ -880,7 +886,7 @@ public class Main {
     }
 
     private static void listarBrinq() {
-        int cont=0;
+        int cont=0,total=0;
         System.out.println("======================================================");
         System.out.println("========= Brinquedos  ================================");
         System.out.println("======================================================");
@@ -888,9 +894,11 @@ public class Main {
             if(brinquedos.getObjtype()==4){
                 System.out.println(brinquedos.toString());
                 cont=cont+1;
+                total=total+brinquedos.getQuantidade();
             }
         }
-        System.out.println("============================= Quantidade : "+cont);
+        System.out.println("============================= Produtos individuais : "+cont);
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior    == 1 ========");
         System.out.println("======== Para voltar ao menu principal    = 2 ========");
@@ -911,17 +919,19 @@ public class Main {
     }
 
     private static void listarFilmes() {
-        int cont=0;
+        int cont=0,total=0;
         System.out.println("======================================================");
         System.out.println("========= Filmes  ====================================");
         System.out.println("======================================================");
         for (Produto filmes: bancoDeDados) {
             if(filmes.getObjtype()==3){
                 System.out.println(filmes.toString());
-                cont=cont+1;
+                cont = cont+1;
+                total = total + filmes.getQuantidade();
             }
         }
-        System.out.println("============================= Quantidade : "+cont);
+        System.out.println("============================= Produtos individuais : "+cont);
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
@@ -942,7 +952,7 @@ public class Main {
     }
 
     private static void listarJogos() {
-        int cont=0;
+        int cont=0,total=0;
         System.out.println("======================================================");
         System.out.println("========= Jogos  =====================================");
         System.out.println("======================================================");
@@ -950,9 +960,11 @@ public class Main {
             if(jogos.getObjtype()==2){
                 System.out.println(jogos.toString());
                 cont=cont+1;
+                total=total+jogos.getQuantidade();
             }
         }
-        System.out.println("============================= Quantidade : "+cont);
+        System.out.println("============================= Produtos individuais : "+cont);
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
@@ -973,7 +985,7 @@ public class Main {
     }
 
     private static void listarLivros() {
-        int cont=0;
+        int cont=0,total=0;
         System.out.println("======================================================");
         System.out.println("========= Livros =====================================");
         System.out.println("======================================================");
@@ -981,9 +993,11 @@ public class Main {
             if(livro.getObjtype()==1){
                 System.out.println(livro.toString());
                 cont=cont+1;
+                total=total+livro.getQuantidade();
             }
         }
-        System.out.println("============================= Quantidade : "+cont);
+        System.out.println("============================= Produtos individuais : "+cont);
+        System.out.println("============================= Soma Total : "+total);
         System.out.println("======================================================");
         System.out.println("======== Para voltar ao menu anterior == 1 ===========");
         System.out.println("======== Para voltar ao menu principal = 2 ===========");
