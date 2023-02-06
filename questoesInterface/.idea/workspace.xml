@@ -5,32 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df180302-a802-4ad3-813d-44272742285f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../A1/Aula1/src/br/com/americanas/polotech/JogoDaVelha/JogoVelhaNoObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../A1/Aula1/src/br/com/americanas/polotech/JogoDaVelha/entities/Jogador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../A1/Aula1/src/br/com/americanas/polotech/JogoDaVelha/entities/TabuleiroJogoDaVelha.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../A1/Aula1/src/br/com/americanas/polotech/JogoDaVelha/interfaces/ITabuleiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../A1/Aula1/src/br/com/americanas/polotech/JogoDaVelha/main4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/enums/MFileAnnotationTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/handler/HandlerFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/FileDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/Foldermanagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/MFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q2/interfaces/Inotificacoes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q2/objetcs/NotificacaoPessoas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q2/objetcs/Pessoa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/ImageDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/handler/HandlerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/handler/HandlerFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/Foldermanagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/Foldermanagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/MFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/MFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/handler/HandlerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/handler/HandlerFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/Foldermanagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/Foldermanagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/MFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/MFile.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +55,26 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.americanas.polotech.q1.Main" />
+      <module name="questoesInterface" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.americanas.polotech.q1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

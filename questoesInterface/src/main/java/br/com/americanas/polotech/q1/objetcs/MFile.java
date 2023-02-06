@@ -6,6 +6,14 @@ public class MFile{
     private String content;
     private String nameFile;
     private MFileAnnotationTypeEnum type;
+    private String path;
+
+    public MFile(String content, String nameFile, MFileAnnotationTypeEnum type, String path) {
+        this.content = content;
+        this.nameFile = nameFile;
+        this.type = type;
+        this.path = path;
+    }
 
     public String getContent() {
         return content;
@@ -29,5 +37,13 @@ public class MFile{
 
     public void setType(MFileAnnotationTypeEnum type) {
         this.type = type;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }
