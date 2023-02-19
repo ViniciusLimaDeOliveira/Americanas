@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df180302-a802-4ad3-813d-44272742285f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/ImageDisplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/handler/HandlerFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/handler/HandlerFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/Foldermanagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/Foldermanagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/MFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/americanas/polotech/q1/objetcs/MFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/handler/HandlerFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/handler/HandlerFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/Foldermanagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/Foldermanagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/interfaces/ImageFileDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FileOrchestrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/FolderOrchestrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/MFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/americanas/polotech/q1/objetcs/MFile.class" afterDir="false" />
-    </list>
+    <list default="true" id="df180302-a802-4ad3-813d-44272742285f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
