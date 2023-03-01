@@ -16,6 +16,7 @@
     <p>Informe o Nome do cliente: <input type="text" name="nome" required></p>
     <p>Informe o CPF do cliente: <input type="text" name="cpf" required></p>
     <p><input type="submit" value="Cadastrar"></p>
+    <a href="historicoClientes.jsp">Historico</a>
   </form>
 </div>
 </body>

@@ -14,7 +14,8 @@
 
     <li><a href="teste.jsp">Atividade 1</a></li>
 
-    <li><a href="calc.jsp">Calculadora</a></li>
+    <li><a href="calculaComp.jsp">Calculadora</a></li>
+    <li><a href="calculaComHisto.jsp"a>Historico</a></li>
 
     <li><a href="createUser.jsp">Cadastrar cliente</a></li>
 </ol>

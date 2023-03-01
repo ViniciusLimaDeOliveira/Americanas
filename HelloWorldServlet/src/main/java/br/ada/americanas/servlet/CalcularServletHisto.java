@@ -8,13 +8,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+@WebServlet(name = "CalcularServletHist", value = "/calcularH")
+public class CalcularServletHisto extends HttpServlet {
 
-@WebServlet(name = "CalcularServlet", value = "/calcular")
-public class CalcularServlet extends HttpServlet {
+    private List<Operacao> operacoes = new ArrayList<>();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -26,16 +27,24 @@ public class CalcularServlet extends HttpServlet {
         BigDecimal second = new BigDecimal(request.getParameter("second"));
         String operator = request.getParameter("operator");
 
-        Operacao operacao = OperacaoFactory.create(operator);
-        BigDecimal result = operacao.execute(first, second);
-        request.setAttribute("first",first);
-        request.setAttribute("second",second);
-        request.setAttribute("op",operator);
-        request.setAttribute("result", result);
-        request.getRequestDispatcher("/resultCalc2.jsp").forward(request, response);
-        //PrintWriter writer = response.getWriter();
-        //writer.println("<html><body>O resultado da soma foi: " + calculo + "</body></html>");
-    }
 
+        Operacao operacao = OperacaoFactory.create(operator);
+        operacao.execute(first, second);
+        var operacoes = recuperaOperacoes(request);
+        operacoes.add(operacao);
+
+
+        request.setAttribute("historico_operacoes", operacoes);
+        request.getRequestDispatcher("/historico.jsp").forward(request, response);
+    }
+    private List<Operacao> recuperaOperacoes(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+        List<Operacao> operacoes = (List<Operacao>) session.getAttribute("historico_operacoes");
+        if (operacoes == null) {
+            operacoes = new ArrayList<>();
+            session.setAttribute("historico_operacoes", operacoes);
+        }
+        return operacoes;
+    }
 
 }
