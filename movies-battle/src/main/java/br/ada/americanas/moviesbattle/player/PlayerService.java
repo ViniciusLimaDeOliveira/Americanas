@@ -26,9 +26,8 @@ public class PlayerService {
     }
 
     public List<Player> list() {
-        return this.repository.findAll();
+        return this.repository.findAllByOrderByScoreDesc();
     }
-
     public Optional<Player> findById(Long id) {
         return this.repository.findById(id);
     }
